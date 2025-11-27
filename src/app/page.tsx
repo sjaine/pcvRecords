@@ -17,15 +17,15 @@ export default function Home() {
         </div>
         
         <div className="w-full flex flex-col justify-left mb-[152px]">
-          <p className="mb-[32px] text-4xl">New Releases</p>
+          <p className="mb-[32px] text-4xl font-bold">New Releases</p>
           <div className="flex w-full justify-between items-center">
-            <ChevronLeftIcon className="size-10" />
+            <ChevronLeftIcon className="size-10 text-lime" />
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-[50px] mb-[104px] content-around justify-items-center w-full">
                 {Array.from({ length: 4 }).map((_, index) => (
                     <Card key={index} />
                 ))}
             </div>
-            <ChevronRightIcon className="size-10" />
+            <ChevronRightIcon className="size-10 text-lime" />
           </div>
         </div>
       </div>

@@ -1,5 +1,8 @@
 import Navbar from "@/src/components/Navbar"
 import Footer from "@/src/components/Footer"
+import Link from "next/link";
+
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
 export default function Home() {
   return (
@@ -7,16 +10,19 @@ export default function Home() {
         <Navbar />
 
         <div className="w-full pr-[107px] pl-[107px]">
-            <p className="text-[213px] fatfrank">TITLE</p>
+            <p className="text-[213px] fatfrank">JIM'S CORNER</p>
 
             <div className="context flex mb-[65px]">
                 <div className="w-1/2 pr-[70px]">
-                    <p className="text-lg">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt lorem purus, vel rutrum urna scelerisque vitae. Aenean ullamcorper leo et ligula aliquam malesuada. Quisque nisi odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt lorem purus, vel rutrum urna scelerisque vitae. Aenean ullamcorper leo et ligula aliquam malesuada. Quisque nisi odio.
-                        <br /><br />
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt lorem purus, vel rutrum urna scelerisque vitae. Aenean ullamcorper leo et ligula aliquam malesuada. Quisque nisi odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt lorem purus, vel rutrum urna scelerisque vitae. Aenean ullamcorper leo et ligula aliquam malesuada. Quisque nisi odio.
+                    <p className="text-2xl">
+                    Jim brings his love for sound into everything he does. When he’s not helping customers find their next favourite record, he’s creating music grounded in storytelling, memory, and human connection. His work blends spoken word, atmospheric arrangements, and honest reflection, forming pieces that feel both intimate and expansive.
+                    <br /> <br />
+                    He shares his projects, performances, and writings on his website, where his approach to art and community really comes through.
                     </p>
-                    <button>Learn More</button>
+                    <Link href="https://www.clarkinstitute.com/" target="_blank" rel="noopener noreferrer" className="inline-flex justify-center items-center align-center bg-lime rounded-full px-[20px] py-[8px] gap-1 mt-[60px]">
+                        <p className="text-2xl text-black font-medium">Explore More</p> 
+                        <ChevronRightIcon className="size-7 text-black" />
+                    </Link>
                 </div>
                 <div className="w-1/2 pl-[70px] mb-[216px] flex justify-end">
                     <div className="w-[663px] h-[663px] bg-gray-500 rounded-2xl"></div>

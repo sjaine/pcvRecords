@@ -16,17 +16,17 @@ const faqs: FaqItem[] = [
   {
     question: "Do you buy any kind of records?",
     answer:
-      "We focus on LPs and 45s in good condition, plus selected CDs and cassettes.",
+      "No. We are mostly interested in rock and pop records from the early 1960’s to the present. We also buy blues, jazz, soul. We can take a look at other genres but can be very choosy when it comes to country, folk easy listening and classical and big band. We do buy 45’s but we have thousands of them in storage and they are usually not worth very much. 78s are rarely worth anything.",
   },
   {
     question: "How does it work?",
     answer:
-      "Bring your records in during store hours. We’ll evaluate them and make an offer.",
+      "Please call before bringing records to the store (905-338-8858). If you have more than 20 records you may need to leave them with us for 24 hours to tender you an offer. Local by-laws require us to record your identification. Offers in excess of $1000 are paid certified cheque. Under $1000 is paid in good old-fashioned cash! If you need help transporting your records to the shop that can be arranged depending on the circumstances.",
   },
   {
     question: "Why sell with PCV?",
     answer:
-      "We’re fast, fair, and experienced — and we pay cash on the spot.",
+      "Unlike many dealers that you will find on Kijiji, we are not in the business of trying to get your records for as little as possible on a “bulk deal”. We look at and access every record individually. PCV is officially licensed as a “second hand dealer” by the town of Oakville. That means we have to pass a police check and other requirement to stay in good standing. Lastly, check out our Facebook and Google reviews. People seem to like us. 😊",
   },
 ];
 
@@ -38,7 +38,7 @@ export default function FaqAccordion() {
   };
 
   return (
-    <div className="space-y-4 w-full">
+    <div className="space-y-4 w-full text-black">
       {faqs.map((item, index) => {
         const isOpen = openIndex === index;
 
@@ -50,7 +50,7 @@ export default function FaqAccordion() {
               className={`flex w-full items-center justify-between px-6 py-4 text-left text-lg font-semibold
                 transition-colors
                 ${isOpen ? "rounded-t-[25px]" : "rounded-[999px]"}
-                bg-gray-300`}
+                bg-lime`}
               aria-expanded={isOpen}
             >
               <span>{item.question}</span>

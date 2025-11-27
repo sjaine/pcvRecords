@@ -2,14 +2,14 @@
 
 export default function Footer() {
   return (
-    <div className="relative w-full h-[350px] bg-gray-600 rounded-[50px] py-16 px-10 overflow-hidden bottom-0">
+    <div className="relative w-full h-[350px] bg-lime rounded-[50px] py-16 px-10 overflow-hidden bottom-0">
       
       {/* Background giant text */}
-      <h1 className="absolute bottom-0 left-1/2 -translate-x-1/2 text-[180px] font-extrabold text-gray-500 opacity-40 whitespace-nowrap pointer-events-none select-none">
+      <h1 className="absolute bottom-0 left-1/2 -translate-x-1/2 text-[200px] font-extrabold text-lime-dark opacity-40 whitespace-nowrap pointer-events-none select-none fatfrank">
         POP CULTURE VULTURE
       </h1>
 
-      <div className="relative z-10 mx-auto max-w-7xl flex justify-between text-white">
+      <div className="relative z-10 mx-auto px-[44px] flex justify-between text-black">
         {/* Left circles */}
         <div className="flex items-start gap-4">
           {[...Array(6)].map((_, i) => (
