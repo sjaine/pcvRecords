@@ -56,3 +56,8 @@ body::-webkit-scrollbar {
   background-color: #D7FE63;
   color: black;
 }
+
+.nav-active {
+  background-color: #D7FE63;
+  color: black;
+}
