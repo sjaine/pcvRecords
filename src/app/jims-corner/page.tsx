@@ -7,7 +7,7 @@ export default function Home() {
         <Navbar />
 
         <div className="w-full pr-[107px] pl-[107px]">
-            <p className="text-[213px]">TITLE</p>
+            <p className="text-[213px] fatfrank">TITLE</p>
 
             <div className="context flex mb-[65px]">
                 <div className="w-1/2 pr-[70px]">
