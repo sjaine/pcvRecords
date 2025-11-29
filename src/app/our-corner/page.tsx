@@ -1,5 +1,6 @@
 import Navbar from "@/src/components/Navbar"
 import Footer from "@/src/components/Footer"
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -17,7 +18,9 @@ export default function Home() {
                 We’re here because music brings people together, and we’re proud to share that with our community every day.
                 </p>
                 <div className="w-1/2 pl-[70px] mb-[216px] flex justify-end">
-                    <div className="w-[663px] h-[663px] bg-gray-500 rounded-2xl"></div>
+                  <div className="w-[663px] h-[663px] aspect-square relative">
+                    <Image src="/images/Images/john.jpg" width={663} height={663} alt="our corner" className="bg-gray-500 aspect-square rounded-2xl object-cover" />
+                  </div>
                 </div>
             </div>
         </div>

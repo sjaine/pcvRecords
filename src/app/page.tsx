@@ -12,7 +12,7 @@ export default function Home() {
       <NavBar />
 
       <div className="w-full pr-[107px] pl-[107px]">
-        <div className="w-full h-[900px] mt-15 mb-15">
+        <div className="w-full h-[900px] mt-30 mb-35">
           <PhotoCollage />
         </div>
         

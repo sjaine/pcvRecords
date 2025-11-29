@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <div className="relative w-full h-[350px] bg-lime rounded-[50px] py-16 px-10 overflow-hidden bottom-0">
@@ -10,23 +12,32 @@ export default function Footer() {
       </h1>
 
       <div className="relative z-10 mx-auto px-[44px] flex justify-between text-black">
-        {/* Left circles */}
+        {/* Left Icons */}
         <div className="flex items-start gap-4">
-          {[...Array(6)].map((_, i) => (
-            <div key={i} className="w-10 h-10 rounded-full bg-[#d6d6d6]" />
-          ))}
+          <Link href="https://www.facebook.com/pcvoakville/">
+            <img src="/images/icons/facebook.svg" alt="Facebook" className="w-[50px] h-[50px]" />
+          </Link>
+          <Link href="https://www.instagram.com/pcvrecords">
+            <img src="/images/icons/instagram.svg" alt="Facebook" className="w-[50px] h-[50px]" />
+          </Link>
+          <Link href="https://x.com/pcvrecords?lang=en">
+            <img src="/images/icons/twitter.svg" alt="Facebook" className="w-[50px] h-[50px]" />
+          </Link>
+          <Link href="mailto:john@pcvrecords.com">
+            <img src="/images/icons/email.svg" alt="Facebook" className="w-[50px] h-[50px]" />
+          </Link>
         </div>
 
         <div className="flex gap-[100px]">
             {/* Contact */}
             <div className="flex flex-col">
-            <span className="font-medium text-sm">Contact</span>
+            <span className="text-sm font-bold">Contact</span>
             <span className="mt-2 text-lg">(905) 338-8858</span>
             </div>
 
             {/* Location */}
             <div className="flex flex-col">
-            <span className="font-medium text-sm">Location</span>
+            <span className="font-bold text-sm">Location</span>
             <span className="mt-2 text-lg">
                 649 Fourth Line <br />
                 Oakville, ON, Canada
@@ -35,7 +46,7 @@ export default function Footer() {
 
             {/* Hours */}
             <div className="flex flex-col">
-            <span className="font-medium text-sm">Hours</span>
+            <span className="font-bold text-sm">Hours</span>
             <span className="mt-2 text-lg leading-relaxed">
                 Mon – Fri: 10am–6pm <br />
                 Sat: 10am–5pm <br />
