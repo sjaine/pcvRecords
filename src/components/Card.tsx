@@ -27,10 +27,10 @@ export default function Card({
       </div>
 
       <div className="flex flex-col gap-2">
-        <h3 className="text-3xl text-black font-semibold line-clamp-2">{title}</h3>
-        <p className="text-lg text-black">{productType}</p>
-        <p className="text-lg text-black">{price}</p>
-        <p className="text-lg text-black">In Stock: {inStock}</p>
+        <h3 className="text-2xl text-black font-semibold line-clamp-2">{title}</h3>
+        <p className="text-base text-black">{productType}</p>
+        <p className="text-base text-black">{price}</p>
+        <p className="text-base text-black">In Stock: {inStock}</p>
       </div>
 
     </article>

@@ -37,11 +37,11 @@ export default function Home() {
         <Navbar />
 
         <div className="w-full pr-[107px] pl-[107px]">
-            <p className="text-[213px] fatfrank">JIM'S CORNER</p>
+            <p className="text-[180px] fatfrank">JIM'S CORNER</p>
 
             <div className="context flex mb-[65px]">
                 <div className="w-1/2 pr-[70px]">
-                    <p className="text-2xl">
+                    <p className="text-lg">
                     Jim brings his love for sound into everything he does. When he’s not helping customers find their next favourite record, he’s creating music grounded in storytelling, memory, and human connection. His work blends spoken word, atmospheric arrangements, and honest reflection, forming pieces that feel both intimate and expansive.
                     <br /> <br />
                     He shares his projects, performances, and writings on his website, where his approach to art and community really comes through.

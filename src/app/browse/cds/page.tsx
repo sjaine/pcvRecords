@@ -45,7 +45,7 @@ export default function Home() {
         <Navbar />
 
         <div className="w-full pr-[107px] pl-[107px]">
-            <p className="text-[213px] fatfrank flex items-center gap-4">
+            <p className="text-[180px] fatfrank flex items-center gap-4">
               <CdIcon className="fill-white text-white w-42 h-42" />
               CDs
             </p>

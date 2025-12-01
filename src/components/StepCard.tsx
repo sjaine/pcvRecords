@@ -26,13 +26,13 @@ const steps = [
   export default function StepCard() {
     return (
       <section className="w-full">
-        <div className="grid gap-[50px] md:grid-cols-2 lg:grid-cols-4 items-start">
+        <div className="grid gap-[30px] md:grid-cols-2 lg:grid-cols-4 items-start">
           {steps.map((step) => (
             <div
               key={step.number}
-              className="grid grid-rows-[auto_auto_1fr] h-full rounded-[40px] bg-lime px-10 py-24 justify-center align-center items-center text-black"
+              className="grid grid-rows-[auto_auto_1fr] h-full rounded-[40px] bg-lime px-10 py-14 justify-center align-center items-center text-black"
             >
-              <div className="text-[140px] font-black text-center">
+              <div className="text-[100px] font-black text-center">
                 {step.number}
               </div>
               <h3 className="text-3xl font-bold mb-[24px] text-center">{step.title}</h3>

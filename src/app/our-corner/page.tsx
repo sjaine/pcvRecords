@@ -8,9 +8,9 @@ export default function Home() {
         <Navbar />
 
         <div className="w-full pr-[107px] pl-[107px]">
-            <p className="text-[213px] fatfrank">OUR CORNER</p>
+            <p className="text-[180px] fatfrank">OUR CORNER</p>
             <div className="context flex">
-                <p className="w-1/2 text-2xl pr-[70px]">
+                <p className="w-1/2 text-lg pr-[70px]">
                 John Anczurowski opened the shop in 2015 with a straightforward goal: build a place where music lovers feel at home. What started as a small passion project has grown into a neighbourhood spot for collectors, newcomers, and anyone who loves the ritual of flipping through vinyl. <br />
                 <br />
                 You’ll also see Lulu (John’s beloved shop dog) popping up on our socials and greeting customers. She’s been part of the store’s personality from the start, bringing a little joy to every visit. <br />

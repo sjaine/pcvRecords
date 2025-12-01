@@ -8,9 +8,9 @@ export default function Home() {
         <Navbar />
 
         <div className="w-full pr-[107px] pl-[107px] min-h-[70vh]">
-            <p className="text-[213px] fatfrank">SELL YOUR VINYL</p>
+            <p className="text-[180px] fatfrank">SELL YOUR VINYL</p>
             <div className="context flex">
-                <p className="w-1/2 text-2xl pr-[70px]">
+                <p className="w-1/2 text-lg pr-[70px]">
                 Got records collecting dust? We buy vinyl of all eras and genres, from single pieces to full collections, and you choose: cash or trade. Bring your records in anytime and we’ll give you a quick, honest appraisal. <br />
                 <br />
                 Please give us a call at 905-338-8858 before coming.

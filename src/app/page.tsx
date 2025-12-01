@@ -44,11 +44,11 @@ export default function Home() {
   const displayedProducts = products.slice(0, 4); 
 
   return (
-    <div className="flex flex-col justify-center align-center items-center w-full pt-30">
+    <div className="flex flex-col justify-center align-center items-center w-full pt-10">
       <NavBar />
 
       <div className="w-full pr-[107px] pl-[107px]">
-        <div className="w-full h-[900px] mt-30 mb-35">
+        <div className="w-full h-[900px] mt-12 mb-15">
           <PhotoCollage />
         </div>
         

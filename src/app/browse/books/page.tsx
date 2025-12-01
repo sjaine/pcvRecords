@@ -46,7 +46,7 @@ export default function Home() {
         <Navbar />
 
         <div className="w-full pr-[107px] pl-[107px]">
-            <p className="text-[213px] fatfrank flex items-center gap-8">
+            <p className="text-[180px] fatfrank flex items-center gap-8">
               <BookIcon className="fill-white text-white w-38 h-38" />
               BOOKs
             </p>

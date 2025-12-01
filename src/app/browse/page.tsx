@@ -44,7 +44,7 @@ export default function Home() {
         <Navbar />
 
         <div className="w-full pr-[107px] pl-[107px]">
-            <p className="text-[213px] fatfrank">NEW ARRIVAL</p>
+            <p className="text-[180px] fatfrank">NEW ARRIVAL</p>
             <div className="context flex gap-[15px]">
                 <button className="rounded-full text-[19px] border px-8 py-2">Sort by</button>
                 <button className="rounded-full text-[19px] border px-8 py-2">Filter</button>

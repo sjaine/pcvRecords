@@ -40,7 +40,7 @@ export default function Navbar() {
       {/* Center Nav */}
       <nav className="bg-midnight rounded-full relative px-[30px] py-[6px]">
         <div className="mx-auto flex items-center whitespace-nowrap">
-          <div className="gap-[40px] md:flex text-lg items-center">
+          <div className="gap-[40px] md:flex text-base items-center">
 
             {menus.map((item) =>
               item.name === "Browse" ? (
@@ -57,10 +57,10 @@ export default function Navbar() {
 
                   <div
                     className="
-                      absolute left-0 top-7 mt-2 w-56 
+                      absolute left-0 top-6 mt-2 w-56 
                       bg-white text-black 
                       rounded-b-3xl rounded-tr-3xl 
-                      shadow-lg border border-black/10 py-4
+                      shadow-lg py-4
                       opacity-0 invisble
                       group-hover:opacity-100 group-hover:visible
                       transition-all duration-200
@@ -91,7 +91,7 @@ export default function Navbar() {
                             )}
 
 
-                            <span className="text-lg">{sub.name}</span>
+                            <span className="text-base">{sub.name}</span>
                           </Link>
                         </li>
                       ))}
