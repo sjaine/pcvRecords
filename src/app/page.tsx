@@ -15,7 +15,7 @@ type Product = {
   id: number;
   title: string;
   productType: string;
-  price: string;
+  priceCad: string;
   inStock: string;
   imageUrl?: string;
 };
@@ -56,7 +56,7 @@ export default function Home() {
           <div className="flex w-full justify-between items-center">
             <ChevronLeftIcon className="size-10 text-lime" />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-[50px] mb-[104px] w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-[50px] mb-[104px] w-full justify-items-center">
               {isLoading && displayedProducts.length === 0 && (
                 <p className="text-sm text-gray-500">Loading...</p>
               )}
@@ -67,13 +67,13 @@ export default function Home() {
                     key={product.id}
                     title={product.title}
                     productType={product.productType}
-                    price={product.price}
+                    price={product.priceCad}
                     inStock={product.inStock}
-                    imageUrl={product.imageUrl}
+                    imageUrl={product.imageUrl ?? "/images/null.jpg"}
                   />
                 ))}
             </div>
-            
+
             <ChevronRightIcon className="size-10 text-lime" />
           </div>
         </div>
