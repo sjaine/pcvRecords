@@ -2,6 +2,14 @@ import Navbar from "@/src/components/Navbar"
 import Footer from "@/src/components/Footer"
 import Link from "next/link";
 
+import EmblaCarousel from "@/src/components/EmblaCarousel";
+import { EmblaOptionsType } from 'embla-carousel'
+
+
+const OPTIONS: EmblaOptionsType = { containScroll: false, loop: true }
+const SLIDE_COUNT = 5
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
 export default function Home() {
@@ -24,13 +32,13 @@ export default function Home() {
                         <ChevronRightIcon className="size-7 text-black" />
                     </Link>
                 </div>
-                <div className="w-1/2 pl-[70px] mb-[216px] flex justify-end">
-                    <div className="w-[663px] h-[663px] bg-gray-500 rounded-2xl"></div>
+                <div className="w-1/2 pl-[70px] mb-[50px] flex justify-end">
+                    <EmblaCarousel slides={SLIDES} options={OPTIONS} />
                 </div>
             </div>
 
             <div className="mb-[130px]">
-                <p className="mb-[32px] text-4xl">Title</p>
+                <p className="mb-[32px] text-4xl font-bold">Jim's Music</p>
                 <div className="flex justify-between">
                     <div className="w-[360px] h-[360px] bg-gray-500 rounded-4xl"></div>
                     <div className="w-[360px] h-[360px] bg-gray-500 rounded-4xl"></div>
