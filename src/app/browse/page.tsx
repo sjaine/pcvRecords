@@ -54,9 +54,9 @@ export default function Home() {
               )}
 
               {!isLoading &&
-                displayedProducts.map((product) => (
+                displayedProducts.map((product, index) => (
                   <Card
-                    key={product.id}
+                  key={product.id ?? index}
                     title={product.title}
                     productType={product.productType}
                     price={product.priceCad}

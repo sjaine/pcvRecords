@@ -1,7 +1,3 @@
-"use client";
-
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
-
 type CardProps = {
   title: string;
   productType: string;
@@ -25,13 +21,13 @@ export default function Card({
           <img
             src={imageUrl}
             alt={title}
-            className="h-full w-full object-cover"
+            className="h-[300px] w-[300px] object-cover"
           />
         ) : null}
       </div>
 
       <div className="flex flex-col gap-2">
-        <h3 className="text-3xl text-black font-semibold">{title}</h3>
+        <h3 className="text-3xl text-black font-semibold line-clamp-2">{title}</h3>
         <p className="text-lg text-black">{productType}</p>
         <p className="text-lg text-black">{price}</p>
         <p className="text-lg text-black">In Stock: {inStock}</p>
