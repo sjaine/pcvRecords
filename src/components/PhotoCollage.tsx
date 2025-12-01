@@ -1,46 +1,85 @@
+"use client";
+
 import Image from "next/image";
+import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 const albums = [
-  { src: "/images/albums/1.png",  classes: "top-4 left-1/12 -rotate-6 z-20" },
-  { src: "/images/albums/2.png",  classes: "top-0 left-1/3 rotate-3 z-30" },
-  { src: "/images/albums/3.png",  classes: "top-6 right-6 rotate-6 z-10" },
-  { src: "/images/albums/4.png",  classes: "top-40 left-0 rotate-2 z-20" },
-  { src: "/images/albums/5.png",  classes: "top-44 left-1/4 -rotate-3 z-40" },
-  { src: "/images/albums/6.png",  classes: "top-32 right-4 -rotate-6 z-30" },
-  { src: "/images/albums/7.png",  classes: "bottom-20 left-8 rotate-6 z-10" },
-  { src: "/images/albums/8.png",  classes: "bottom-16 left-1/3 -rotate-6 z-30" },
-  { src: "/images/albums/9.png",  classes: "bottom-16 right-10 rotate-2 z-20" },
-  { src: "/images/albums/10.png", classes: "top-20 left-1/2 -rotate-3 z-30" },
-  { src: "/images/albums/11.png", classes: "bottom-4 left-1/4 rotate-3 z-10" },
-  { src: "/images/albums/12.png", classes: "bottom-0 right-1/6 -rotate-6 z-40" },
+  { src: "/images/albums/1.png",  position: "top-4 left-1/12 z-20",  rotation: -6 },
+  { src: "/images/albums/2.png",  position: "top-0 left-1/3 z-30",   rotation: 3 },
+  { src: "/images/albums/3.png",  position: "top-6 right-6 z-10",    rotation: 6 },
+  { src: "/images/albums/4.png",  position: "top-40 left-0 z-20",    rotation: 2 },
+  { src: "/images/albums/5.png",  position: "top-44 left-1/4 z-40",  rotation: -3 },
+  { src: "/images/albums/6.png",  position: "top-32 right-4 z-30",   rotation: -6 },
+  { src: "/images/albums/7.png",  position: "bottom-20 left-8 z-10", rotation: 6 },
+  { src: "/images/albums/8.png",  position: "bottom-16 left-1/3 z-30", rotation: -6 },
+  { src: "/images/albums/9.png",  position: "bottom-16 right-10 z-20", rotation: 2 },
+  { src: "/images/albums/10.png", position: "top-20 left-1/2 z-30",  rotation: -3 },
+  { src: "/images/albums/11.png", position: "bottom-4 left-1/4 z-10", rotation: 3 },
+  { src: "/images/albums/12.png", position: "bottom-0 right-1/6 z-40", rotation: -6 },
 ];
 
 export default function PhotoCollage() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
   return (
-    <div className="relative w-full max-w-[1400px] h-[900px] min-h-[900px] mx-auto m-10">
+    <motion.div ref={containerRef} className="relative w-full h-[1100px]">
+      <div className="relative w-full max-w-[1400px] h-[900px] min-h-[900px] mx-auto m-10">
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 flex justify-center items-center rounded-xl">
           <img
             src="/Hortizontal_Logo.svg"
             alt="Search"
             className="relative"
+            draggable={false}
           />
         </div>
 
         {albums.map((album, i) => (
-        <div
-            key={i}
-            className={`absolute w-[350px] shadow-2xl rounded-md ${album.classes}`}
+        <motion.div
+          key={i}
+          drag
+          dragConstraints={containerRef}
+          dragElastic={0.25}
+          onDragStart={() => setActiveIndex(i)}
+          onDragEnd={() => setActiveIndex(null)}
+          className={`absolute w-[350px] shadow-2xl rounded-md cursor-grab active:cursor-grabbing ${album.position}`}
+          style={{
+            zIndex: activeIndex === i ? 999 : undefined,
+          }}
+          animate={{
+            y: [0, -8, 0, 4, 0],
+            rotate: [
+              album.rotation,
+              album.rotation + 1.5,
+              album.rotation - 1.5,
+              album.rotation,
+            ],
+          }}
+          whileHover={{
+            scale: 1.04,
+            rotate: 0,
+            boxShadow: "0px 24px 45px rgba(0,0,0,0.35)",
+          }}
+          whileTap={{ scale: 0.97 }}
+          whileDrag={{
+            scale: 1.08,
+            rotate: 0,
+            boxShadow: "0px 28px 60px rgba(0,0,0,0.45)",
+          }}
         >
-            <Image
+          <Image
             src={album.src}
             alt={`album-${i + 1}`}
             width={500}
             height={500}
+            draggable={false}
             className="w-full h-auto rounded-md"
             priority={i < 4}
-            />
-        </div>
-        ))}
-    </div>
+          />
+        </motion.div>
+      ))}
+      </div>
+    </motion.div>
   );
 }
