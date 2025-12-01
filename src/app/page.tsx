@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 import NavBar from "../components/Navbar";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
@@ -6,7 +10,38 @@ import PhotoCollage from "../components/PhotoCollage";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
+
+type Product = {
+  id: number;
+  title: string;
+  productType: string;
+  price: string;
+  inStock: string;
+  imageUrl?: string;
+};
+
 export default function Home() {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const res = await fetch("/api/records");
+        const data = await res.json();
+        setProducts(data);
+      } catch (error) {
+        console.error("Failed to fetch products:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    fetchProducts();
+  }, []);
+
+  const displayedProducts = products.slice(0, 4); 
+
   return (
     <div className="flex flex-col justify-center align-center items-center w-full pt-15">
       <NavBar />
@@ -20,11 +55,25 @@ export default function Home() {
           <p className="mb-[32px] text-4xl font-bold">New Releases</p>
           <div className="flex w-full justify-between items-center">
             <ChevronLeftIcon className="size-10 text-lime" />
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-[50px] mb-[104px] content-around justify-items-center w-full">
-                {Array.from({ length: 4 }).map((_, index) => (
-                    <Card key={index} />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-[50px] mb-[104px] w-full">
+              {isLoading && displayedProducts.length === 0 && (
+                <p className="text-sm text-gray-500">Loading...</p>
+              )}
+
+              {!isLoading &&
+                displayedProducts.map((product) => (
+                  <Card
+                    key={product.id}
+                    title={product.title}
+                    productType={product.productType}
+                    price={product.price}
+                    inStock={product.inStock}
+                    imageUrl={product.imageUrl}
+                  />
                 ))}
             </div>
+            
             <ChevronRightIcon className="size-10 text-lime" />
           </div>
         </div>

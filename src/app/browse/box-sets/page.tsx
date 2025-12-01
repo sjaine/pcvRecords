@@ -6,51 +6,55 @@ import Navbar from "@/src/components/Navbar"
 import Footer from "@/src/components/Footer"
 import Card from "@/src/components/Card"
 
-type Product = {
-  id: number;
-  title: string;
-  productType: string;
-  priceCad: string;
-  inStock: string;
-  imageUrl?: string;
-};
+import BoxSetIcon from "@/public/images/dropdown/box_sets";
 
+type Product = {
+    id: number;
+    title: string;
+    productType: string;
+    priceCad: string;
+    inStock: string;
+    imageUrl?: string;
+  };
 
 export default function Home() {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+    const [products, setProducts] = useState<Product[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
+    useEffect(() => {
     async function fetchProducts() {
-      try {
+        try {
         const res = await fetch("/api/records");
         const data = await res.json();
         setProducts(data);
-      } catch (error) {
+        } catch (error) {
         console.error("Failed to fetch products:", error);
-      } finally {
+        } finally {
         setIsLoading(false);
-      }
+        }
     }
 
     fetchProducts();
-  }, []);
+    }, []);
 
-  const displayedProducts = products.slice(0, 10); 
+    const displayedProducts = products.slice(0, 10); 
 
   return (
     <div className="flex flex-col justify-center align-center items-center w-full pt-15">
         <Navbar />
 
         <div className="w-full pr-[107px] pl-[107px]">
-            <p className="text-[213px] fatfrank">NEW ARRIVAL</p>
+            <p className="text-[213px] fatfrank flex items-center gap-8">
+              <BoxSetIcon className="fill-white text-white w-38 h-38" />
+              BOX SETs
+            </p>
             <div className="context flex gap-[15px]">
                 <button className="rounded-full text-[19px] border px-8 py-2">Sort by</button>
                 <button className="rounded-full text-[19px] border px-8 py-2">Filter</button>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-[50px] mb-[104px] w-full">
               {isLoading && displayedProducts.length === 0 && (
-                <p className="text-sm text-white">Loading...</p>
+                <p className="text-sm text-gray-500">Loading...</p>
               )}
 
               {!isLoading &&

@@ -2,21 +2,41 @@
 
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
-export default function Card() {
-  return (
-    <article className="flex min-w-[300px] max-w-[350px] flex-shrink-0 flex-col justify-between rounded-[32px] border-[2px] border-gray-200 bg-white p-6">
-      {/* Image placeholder */}
-      <div className="mb-6 h-72 w-full rounded-[24px] bg-gray-200" />
+type CardProps = {
+  title: string;
+  productType: string;
+  price: string;
+  inStock: string;
+  imageUrl?: string;
+};
 
-      <div>
-        <h3 className="text-lg font-semibold">Album title</h3>
-        <p className="text-sm text-gray-600">Artist</p>
+export default function Card({
+  title,
+  productType,
+  price,
+  inStock,
+  imageUrl,
+}: CardProps) {
+  return (
+    <article className="flex min-w-[300px] max-w-[350px] flex-shrink-0 flex-col justify-start rounded-[32px] border-[2px] border-gray-200 bg-white p-6 max-h-[550px]">
+      {/* Image */}
+      <div className="mb-6 h-72 w-full rounded-[24px] bg-gray-200 overflow-hidden">
+        {imageUrl ? (
+          <img
+            src={imageUrl}
+            alt={title}
+            className="h-full w-full object-cover"
+          />
+        ) : null}
       </div>
 
-      <button className="mt-6 inline-flex items-center justify-between rounded-full bg-black px-5 py-2 text-sm font-medium text-white">
-        <span>View</span>
-        <ChevronRightIcon className="size-4" />
-      </button>
+      <div className="flex flex-col gap-2">
+        <h3 className="text-3xl text-black font-semibold">{title}</h3>
+        <p className="text-lg text-black">{productType}</p>
+        <p className="text-lg text-black">{price}</p>
+        <p className="text-lg text-black">In Stock: {inStock}</p>
+      </div>
+
     </article>
   );
 }
