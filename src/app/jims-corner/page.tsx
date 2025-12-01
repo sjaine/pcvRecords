@@ -1,16 +1,35 @@
 import Navbar from "@/src/components/Navbar"
 import Footer from "@/src/components/Footer"
 import Link from "next/link";
+import Image from "next/image";
 
 import EmblaCarousel from "@/src/components/EmblaCarousel";
 import { EmblaOptionsType } from 'embla-carousel'
 
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
 const OPTIONS: EmblaOptionsType = { containScroll: false, loop: true }
 const SLIDE_COUNT = 5
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
+const albums = [
+    {
+      title: "Orange Christmas",
+      cover: "/images/Images/ornage_christmas.jpg",
+    },
+    {
+      title: "Under the Lampshade",
+      cover: "/images/Images/lampshade.jpg",
+    },
+    {
+      title: "A Kinder You",
+      cover: "/images/Images/kinder_you.jpg",
+    },
+    {
+      title: "Marcella Never Got The News",
+      cover: "/images/Images/marcella.jpg",
+    },
+  ]
 
 export default function Home() {
   return (
@@ -39,11 +58,29 @@ export default function Home() {
 
             <div className="mb-[130px]">
                 <p className="mb-[32px] text-4xl font-bold">Jim's Music</p>
-                <div className="flex justify-between">
-                    <div className="w-[360px] h-[360px] bg-gray-500 rounded-4xl"></div>
-                    <div className="w-[360px] h-[360px] bg-gray-500 rounded-4xl"></div>
-                    <div className="w-[360px] h-[360px] bg-gray-500 rounded-4xl"></div>
-                    <div className="w-[360px] h-[360px] bg-gray-500 rounded-4xl"></div>
+                <div className="flex gap-8 justify-between">
+                    {albums.map((album) => (
+                    <div
+                        key={album.title}
+                        className="w-[400px] bg-white rounded-[32px] p-6 flex flex-col shadow-lg"
+                    >
+                        {/* cover image */}
+                        <div className="w-full aspect-square rounded-[24px] overflow-hidden mb-6">
+                        <Image
+                            src={album.cover}
+                            alt={album.title}
+                            width={360}
+                            height={360}
+                            className="w-full h-full object-cover"
+                        />
+                        </div>
+
+                        {/* title */}
+                        <p className="text-3xl font-semibold text-black leading-tight">
+                        {album.title}
+                        </p>
+                    </div>
+                    ))}
                 </div>
             </div>
         </div>
