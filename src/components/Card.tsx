@@ -14,14 +14,14 @@ export default function Card({
   imageUrl,
 }: CardProps) {
   return (
-    <article className="flex min-w-[300px] max-w-[350px] flex-shrink-0 flex-col justify-start rounded-[32px] border-[2px] border-gray-200 bg-white p-6 max-h-[550px]">
+    <article className="flex min-w-[280px] max-w-[340px] flex-shrink-0 flex-col justify-start rounded-[32px] border-[2px] border-gray-200 bg-white p-6 max-h-[500px]">
       {/* Image */}
-      <div className="mb-6 h-72 w-full rounded-[24px] bg-gray-200 overflow-hidden">
+      <div className="mb-6 h-full w-full rounded-[24px] overflow-hidden">
         {imageUrl ? (
           <img
             src={imageUrl}
             alt={title}
-            className="h-[300px] w-[300px] object-cover"
+            className="w-full h-full min-h-[240px] max-h-[300px] min-w-[240px] max-w-[300px] object-cover"
           />
         ) : null}
       </div>

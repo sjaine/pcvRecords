@@ -12,7 +12,7 @@ export default function Home() {
 
             <div className="context flex mb-[65px]">
                 <p className="w-1/2 text-lg pr-[70px]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt lorem purus, vel rutrum urna scelerisque vitae. Aenean ullamcorper leo et ligula aliquam malesuada. Quisque nisi odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt lorem purus, vel rutrum urna scelerisque vitae. Aenean ullamcorper leo et ligula aliquam malesuada. Quisque nisi odio.
+                Starting a vinyl collection can feel overwhelming, especially with so many formats, pressings, and turntable setups out there. The good news is that getting into vinyl doesn’t have to be complicated. With a few simple tips and a bit of curiosity, anyone can begin building a collection that feels personal and exciting. Below are a few essentials to help new collectors feel confident as they get started. 
                 </p>
             </div>
 

@@ -11,11 +11,9 @@ export default function Home() {
             <p className="text-[180px] fatfrank">OUR CORNER</p>
             <div className="context flex">
                 <p className="w-1/2 text-lg pr-[70px]">
-                John Anczurowski opened the shop in 2015 with a straightforward goal: build a place where music lovers feel at home. What started as a small passion project has grown into a neighbourhood spot for collectors, newcomers, and anyone who loves the ritual of flipping through vinyl. <br />
+                John Anczurowski opened the shop in 2015 with a simple goal: create a place where music lovers feel at home. PCV stands for Pop Culture Vulture, a name that reflects the spirit of digging, discovering, and celebrating the music that shapes us. The shop has grown into a neighbourhood spot for collectors, newcomers, and anyone who loves the ritual of flipping through vinyl. <br />
                 <br />
-                You’ll also see Lulu (John’s beloved shop dog) popping up on our socials and greeting customers. She’s been part of the store’s personality from the start, bringing a little joy to every visit. <br />
-                <br />
-                We’re here because music brings people together, and we’re proud to share that with our community every day.
+                Lulu, John’s beloved shop dog, often appears on our socials and in the store. She’s part of the shop’s charm and brings a little joy to everyone who visits. We’re here because music brings people together, and we’re proud to share that with our community every day.
                 </p>
 
                 <div className="w-1/2 pl-[70px] mb-[216px] flex justify-end">
