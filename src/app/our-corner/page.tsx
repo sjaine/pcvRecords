@@ -17,9 +17,34 @@ export default function Home() {
                 <br />
                 We’re here because music brings people together, and we’re proud to share that with our community every day.
                 </p>
+
                 <div className="w-1/2 pl-[70px] mb-[216px] flex justify-end">
                   <div className="w-[663px] h-[663px] aspect-square relative">
                     <Image src="/images/Images/john.jpg" width={663} height={663} alt="our corner" className="bg-gray-500 aspect-square rounded-2xl object-cover" />
+
+                  <Image
+                    src="/images/Images/cassette.png"
+                    alt="cassette"
+                    width={210}
+                    height={130}
+                    className="absolute top-[-10px] right-[-50px] rotate-[-12deg]"
+                  />
+
+                  <Image
+                    src="/images/Images/record.png"
+                    alt="record"
+                    width={290}
+                    height={290}
+                    className="absolute bottom-[-40px] left-[0] -translate-x-1/2"
+                  />
+
+                  <Image
+                    src="/images/Images/soundwaves.png"
+                    alt="sound wave"
+                    width={300}
+                    height={300}
+                    className="absolute bottom-[-20px] left-[35%] -translate-x-1/2 rotate-[-12deg]"
+                  />
                   </div>
                 </div>
             </div>
