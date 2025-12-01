@@ -33,7 +33,7 @@ const albums = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col justify-center align-center items-center w-full pt-15">
+    <div className="flex flex-col justify-center align-center items-center w-full pt-30">
         <Navbar />
 
         <div className="w-full pr-[107px] pl-[107px]">

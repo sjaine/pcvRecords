@@ -4,10 +4,10 @@ import Faq from "@/src/components/Faq"
 
 export default function Home() {
   return (
-    <div className="flex flex-col justify-center align-center items-center w-full pt-15">
+    <div className="flex flex-col justify-center align-center items-center w-full pt-30">
         <Navbar />
 
-        <div className="w-full pr-[107px] pl-[107px]">
+        <div className="w-full pr-[107px] pl-[107px] min-h-[70vh]">
             <p className="text-[213px] fatfrank">SELL YOUR VINYL</p>
             <div className="context flex">
                 <p className="w-1/2 text-2xl pr-[70px]">

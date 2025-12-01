@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Navbar from "@/src/components/Navbar"
 import Footer from "@/src/components/Footer"
 import Card from "@/src/components/Card"
+import SkeletonCard from "@/src/components/SkeletonCard";
 
 import CdIcon from "@/public/images/dropdown/cd";
 
@@ -40,7 +41,7 @@ export default function Home() {
     const displayedProducts = products.slice(0, 10); 
 
   return (
-    <div className="flex flex-col justify-center align-center items-center w-full pt-15">
+    <div className="flex flex-col justify-center align-center items-center w-full pt-30">
         <Navbar />
 
         <div className="w-full pr-[107px] pl-[107px]">
@@ -54,7 +55,11 @@ export default function Home() {
             </div>
            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-[50px] mb-[104px] w-full">
               {isLoading && displayedProducts.length === 0 && (
-                <p className="text-sm text-gray-500">Loading...</p>
+                <>
+                {[...Array(10)].map((_, i) => (
+                  <SkeletonCard key={i} />
+                ))}
+              </>
               )}
 
               {!isLoading &&

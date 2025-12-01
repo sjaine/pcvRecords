@@ -31,10 +31,11 @@ export default function Navbar() {
     <div className="w-full fixed top-[30px] z-60 flex items-center px-[63px] justify-between">
       <div className="fade-bottom absolute w-full"></div>
 
-      {/* Logo */}
-      <Link href="/" className="w-[75px] h-[75px] relative">
-        <img src="/Logomark.svg" alt="Logo" className="w-[75px] h-[75px]" />
-      </Link>
+      <div className="w-[300px] relative">
+        <Link href="/" className="w-[75px] h-[75px] relative">
+          <img src="/Logomark.svg" alt="Logo" className="w-[75px] h-[75px]" />
+        </Link>
+      </div>
 
       {/* Center Nav */}
       <nav className="bg-midnight rounded-full relative px-[30px] py-[6px]">
@@ -43,7 +44,6 @@ export default function Navbar() {
 
             {menus.map((item) =>
               item.name === "Browse" ? (
-                // 🟡 Hoverable Browse Menu
                 <div key={item.href} className="relative group">
                   <Link
                     href={item.href}
@@ -55,7 +55,6 @@ export default function Navbar() {
                     <ChevronRightIcon className="size-4 group-hover:rotate-90 transition-transform" />
                   </Link>
 
-                  {/* Dropdown */}
                   <div
                     className="
                       absolute left-0 top-7 mt-2 w-56 
@@ -100,7 +99,6 @@ export default function Navbar() {
                   </div>
                 </div>
               ) : (
-                // 🟢 Normal menu items
                 <Link
                   key={item.href}
                   href={item.href}
@@ -116,11 +114,10 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Search */}
       <img
-        src="/images/search.svg"
+        src="/images/search_bar.svg"
         alt="Search"
-        className="w-[35px] h-[35px] relative right-0"
+        className="w-[300px] h-[35px] relative right-0"
       />
     </div>
   );

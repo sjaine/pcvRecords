@@ -6,6 +6,7 @@ import NavBar from "../components/Navbar";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 import PhotoCollage from "../components/PhotoCollage";
+import SkeletonCard from "../components/SkeletonCard";
 
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
@@ -43,7 +44,7 @@ export default function Home() {
   const displayedProducts = products.slice(0, 4); 
 
   return (
-    <div className="flex flex-col justify-center align-center items-center w-full pt-15">
+    <div className="flex flex-col justify-center align-center items-center w-full pt-30">
       <NavBar />
 
       <div className="w-full pr-[107px] pl-[107px]">
@@ -58,7 +59,11 @@ export default function Home() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-[50px] mb-[104px] w-full justify-items-center">
               {isLoading && displayedProducts.length === 0 && (
-                <p className="text-sm text-gray-500">Loading...</p>
+                <>
+                {[...Array(4)].map((_, i) => (
+                  <SkeletonCard key={i} />
+                ))}
+              </>
               )}
 
               {!isLoading &&
