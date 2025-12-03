@@ -6,7 +6,7 @@ import NavBar from "../components/Navbar";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 import PhotoCollage from "../components/PhotoCollage";
-import SkeletonCard from "../components/SkeletonCard";
+import SkeletonCardB from "../components/SkeletonCardB";
 
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
@@ -61,7 +61,7 @@ export default function Home() {
               {isLoading && displayedProducts.length === 0 && (
                 <>
                 {[...Array(4)].map((_, i) => (
-                  <SkeletonCard key={i} />
+                  <SkeletonCardB key={i} />
                 ))}
               </>
               )}

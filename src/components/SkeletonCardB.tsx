@@ -1,7 +1,7 @@
-export default function SkeletonCard() {
+export default function SkeletonCardB() {
     return (
-      <article className="flex min-w-[280px] max-w-[340px] flex-shrink-0 flex-col justify-start rounded-[32px] border-[2px] border-gray-200 bg-white p-6 max-h-[540px] animate-pulse">
-        <div className="mb-6 min-w-[240px] max-w-[300px] aspect-square bg-gray-300 rounded-[24px] aspect-square overflow-hidden">
+      <article className="flex w-[340px] h-[530px] flex-shrink-0 flex-col justify-start rounded-[32px] border-[2px] border-gray-200 bg-white p-6 animate-pulse">
+        <div className="mb-6 w-[280px] aspect-square bg-gray-300 rounded-[24px] aspect-square overflow-hidden">
         </div>
          
         <div className="flex flex-col gap-3">

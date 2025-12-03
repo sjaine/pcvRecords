@@ -14,9 +14,9 @@ export default function Card({
   imageUrl,
 }: CardProps) {
   return (
-    <article className="flex min-w-[280px] max-w-[340px] flex-shrink-0 flex-col justify-start rounded-[32px] border-[2px] border-gray-200 bg-white p-6 max-h-[500px]">
+    <article className="flex min-w-[280px] max-w-[340px] flex-shrink-0 flex-col justify-start rounded-[32px] border-[2px] border-gray-200 bg-white p-6 max-h-[540px]">
       {/* Image */}
-      <div className="mb-6 h-full w-full rounded-[24px] overflow-hidden">
+      <div className="mb-6 h-full w-full aspect-square rounded-[24px] overflow-hidden">
         {imageUrl ? (
           <img
             src={imageUrl}
